@@ -39,10 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'teacher',
-    'staff',
-    'student',
     'profiles',
+    'teachers',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +80,7 @@ WSGI_APPLICATION = 'school_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'School-App-2019',
+        'NAME': 'app_school',
         'USER': 'infosys',
         'PASSWORD': 'admin',
         'HOST': '127.0.0.1',
@@ -110,6 +108,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+'''
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+'''
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -129,3 +134,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+AUTH_USER_MODEL = 'profiles.UserProfile'
